@@ -12,3 +12,5 @@ Java로 작성한 간단한 목업 안드로이드 앱입니다.
 ## 역할
 앱 개발 (1인)
 
+## 결과화면
+![results](https://user-images.githubusercontent.com/73521025/174426436-e4a0c8bc-2ca6-455d-bdc3-80e972bbb61c.PNG)
