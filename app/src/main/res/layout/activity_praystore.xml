@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 상점 이미지 -->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"></android.support.v4.view.ViewPager>
+
+                <!-- 뒤로가기 버튼 -->
+                <ImageView
+                    android:onClick="onBackBtnClicked"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:scaleType="fitStart"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/left_arrow"/>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|top"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="25dp">
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:orientation="horizontal" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <!-- 공유 버튼 -->
+                        <ImageView
+                            android:id="@+id/sharebtn"
+
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:scaleType="fitStart"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/share"/>
+                        <!-- 즐겨찾기 추가 버튼-->
+                        <ImageView
+                            android:id="@+id/pinebtn"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/pin3"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+
+            </FrameLayout>
+
+            <!-- 상점 간략 정보 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:paddingLeft="15dp">
+
+                <!-- 상점 이름, 평점 등-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top"
+                        android:text="title"
+                        android:textSize="24dp" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"></FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_stars"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="★★★☆☆"
+                            android:textColor="#ffe533"
+                            android:textSize="22dp" />
+                        <!-- 리뷰 점수-->
+                        <TextView
+                            android:id="@+id/tv_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="5dp"
+                            android:text="4.1"
+                            android:textSize="20dp" />
+                        <!-- 짝대기-->
+                        <ImageView
+                            android:layout_width="3dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center|bottom"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="#dddddd" />
+                        <!--리뷰 갯수ㅡ-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="review "
+                            android:textColor="#dd4236"
+                            android:textSize="18dp" />
+                        <TextView
+                            android:id="@+id/tv_review_cnt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:textColor="#dd4236"
+                            android:text="23"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <!-- 우측 상단 아이콘 -->
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/qr" />
+            </FrameLayout>
+            <!--//상점 간략정보-->
+            <!-- 구분선 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#dddddd"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#eeeeee"/>
+
+
+            <!-- 기도실 제공 서비스-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="left|center_vertical"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="We Provide"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/weprovide"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="20dp"
+                    android:paddingLeft="15dp">
+
+                    <!--  아이콘/이름 프레임 -->
+                    <FrameLayout
+                        android:id="@+id/icon_carpet"
+                        android:layout_width="85dp"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/carpet"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="5dp"
+                                android:text="Carpet"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+
+                    <!--  아이콘/이름 프레임 -->
+                    <FrameLayout
+                        android:id="@+id/icon_koran"
+                        android:layout_width="85dp"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/quran"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="5dp"
+                                android:text="Koran"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+`
+                    <!--  아이콘/이름 프레임 -->
+                    <FrameLayout
+                        android:id="@+id/icon_mukena"
+                        android:layout_width="85dp"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/muslim"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="5dp"
+                                android:text="Mukena"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+
+                    <!--  아이콘/이름 프레임 -->
+                    <FrameLayout
+                        android:id="@+id/icon_sarong"
+                        android:layout_width="85dp"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/fabric"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="5dp"
+                                android:text="Sarong"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <!--//제공리스트 끝 -->
+            <!-- 구분선 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#dddddd"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#eeeeee"/>
+
+
+            <!-- 기도실 규칙 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="left|center_vertical"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="Rules"
+                android:textSize="19dp"
+                android:textStyle="bold" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="20dp"
+                    android:paddingLeft="15dp">
+
+
+                    <!--  아이콘/이름 프레임 -->
+                    <FrameLayout
+                        android:layout_width="85dp"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/clock"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="5dp"
+                                android:text="Max 10 mins"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+
+                    <!--  아이콘/이름 프레임 -->
+                    <FrameLayout
+                        android:layout_width="85dp"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ban2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="5dp"
+                                android:text="No smoking"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <!--  아이콘/이름 프레임 -->
+                    <FrameLayout
+                        android:layout_width="85dp"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/clean"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="5dp"
+                                android:text="Keep it clean"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+
+                    <!--  아이콘/이름 프레임 -->
+                    <FrameLayout
+                        android:layout_width="85dp"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:background="@drawable/ban" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="5dp"
+                                android:text="Keep it quite"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+            <!--//기도실 규칙 끝 -->
+            <!-- 구분선 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#dddddd"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#eeeeee"/>
+
+            <!-- 구분선 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#dddddd"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#eeeeee"/>
+
+            <!-- 상점 정보 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:orientation="vertical">
+                <!-- 아이콘/텍스트-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/time" />
+                    <TextView
+                        android:id="@+id/tv_open"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="09:00 - 18:00"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+                <!-- 아이콘/텍스트-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/phone" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="010-0000-0000"
+                        android:textSize="18dp" />
+                </LinearLayout>
+                <!-- 아이콘/텍스트-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/loc" />
+                    <TextView
+                        android:id="@+id/tv_loc"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="서울시 마포구 와우산로 94"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:text="기도실이 제공되는 상점입니다."
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+            <!--//상점정보 끝 -->
+            <!-- 구분선 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#dddddd"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#eeeeee"/>
+
+
+            <!-- 상점 지도 -->
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.MapFragment"
+                map:cameraTargetLat="37.551555"
+                map:cameraTargetLng="126.924983"
+                map:liteMode="true"
+                map:cameraZoom="17"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+            <!--//상점지도 끝 -->
+            <!-- 구분선 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#dddddd"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#eeeeee"/>
+
+
+            <!-- 리뷰 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="left|center_vertical"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:background="#dd3e32"
+                android:text="Review"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingHorizontal="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_stars2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="★★★☆☆"
+                    android:textColor="#ffe533"
+                    android:textSize="22dp" />
+                <!-- 리뷰 점수-->
+                <TextView
+                    android:id="@+id/tv_score2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="5dp"
+                    android:text="4.1"
+                    android:textSize="20dp" />
+                <!-- 짝대기-->
+                <ImageView
+                    android:layout_width="3dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#dddddd" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="review "
+                    android:textColor="#dd4236"
+                    android:textSize="18dp" />
+                <TextView
+                    android:id="@+id/tv_review_cnt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textColor="#dd4236"
+                    android:text="23"
+                    android:textSize="18dp" />
+            </LinearLayout>
+            <!-- 리뷰 구분선 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginVertical="8dp">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#eeeeee"/>
+            </FrameLayout>
+
+            <ListView
+                android:id="@+id/reviewlistview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- 임시 리뷰 목록 -->
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="asd123"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="2018.02.29"
+                        android:textSize="16dp"/>
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffe533"
+                        android:textSize="18dp"
+                        android:text="★★★☆☆"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18dp"
+                        android:text="매장이 크고 사장님이 잘생기고 서비스가 좋았다. "
+                        />
+                </LinearLayout>
+                <!-- 리뷰 구분선 -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginVertical="8dp">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#eeeeee"/>
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="asd123"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="2018.02.29"
+                        android:textSize="16dp"/>
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffe533"
+                        android:textSize="18dp"
+                        android:text="★★★☆☆"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18dp"
+                        android:text="매장이 크고 사장님이 잘생기고 서비스가 좋았다. "
+                        />
+                </LinearLayout>
+                <!-- 리뷰 구분선 -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginVertical="8dp">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#eeeeee"/>
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

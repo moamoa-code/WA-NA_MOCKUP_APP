@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="15dp"
+                android:background="#0198d7"
+                android:radius="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center"
+                        android:src="@drawable/pray"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp"
+                        android:text="Find pray room"/>
+                </LinearLayout>
+                
+            </FrameLayout>
+
+        <LinearLayout
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="5dp"
+            android:orientation="horizontal"
+           >
+            <ImageView
+                android:layout_width="0px"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:background="#eeeeee"
+                android:src="@drawable/pray" />
+            <ImageView
+                android:layout_width="0px"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:background="#eeeeee"
+                android:src="@drawable/shirt" />
+            <ImageView
+                android:layout_width="0px"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:background="#eeeeee"
+                android:src="@drawable/star" />
+            <ImageView
+                android:layout_width="0px"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:background="#eeeeee"
+                android:src="@drawable/cosmetics" />
+        </LinearLayout>
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/boss_ad2"/>
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/aeroad"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

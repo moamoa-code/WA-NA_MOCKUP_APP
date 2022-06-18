@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginVertical="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/border">
+            <!-- 좌측 -->
+            <FrameLayout
+                android:id="@+id/dm_pic_frame"
+                android:layout_width="110dp"
+                android:layout_height="220dp">
+                <!-- 사진 -->
+                <ImageView
+                    android:id="@+id/dm_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dark1"
+                    android:scaleType="centerCrop"/>
+                <!-- 확장버튼 -->
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"
+                    android:layout_marginRight="2dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:src="@drawable/extend"/>
+            </FrameLayout>
+            <!-- 우측 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:orientation="vertical">
+                <!-- 음식이름 -->
+                <TextView
+                    android:id="@+id/dm_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#000000"
+                    android:text="음식 이름"/>
+                <!-- 영어이름 dm_name_eng-->
+                <TextView
+                    android:id="@+id/dm_name_eng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="Name in English"/>
+
+                <!-- 각종 아이콘 dm_icons-->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginRight="20dp">
+                    <LinearLayout
+                        android:id="@+id/dm_icons"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:orientation="horizontal">
+                        <!-- 소고기 icon_beef-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_beef"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/beeff"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Beef"/>
+                        </LinearLayout>
+                        <!-- 치킨 icon_chi-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_chi"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/chicken"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Chicken"/>
+                        </LinearLayout>
+                        <!-- 돼지 icon_pork-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_pork"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/pig"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Pork"/>
+                        </LinearLayout>
+                        <!-- 양고기 icon_lamb-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_lamb"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/lamb"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Lamb"/>
+                        </LinearLayout>
+                        <!-- 글루텐 icon_gluten-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_gluten"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/gluten"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Gluten"/>
+                        </LinearLayout>
+                        <!-- 조개 icon_shell-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_shell"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/shell"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Shell"/>
+                        </LinearLayout>
+                        <!-- 생선 icon_fish-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_fish"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/fish"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Fish"/>
+                        </LinearLayout>
+                        <!-- 새우 icon_shr-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_shr"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/shrimp"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Shrimp"/>
+                        </LinearLayout>
+                        <!-- 우유 icon_milk-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_milk"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/milk"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Milk"/>
+                        </LinearLayout>
+                        <!-- 갈릭 icon_gal-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_garlic"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/gal"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Garlic"/>
+                        </LinearLayout>
+                        <!-- 매움 icon_spicy 1-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_spicy1"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/sp1"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Hot 1"/>
+                        </LinearLayout>
+                        <!-- 매움 icon_spicy 2-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_spicy2"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/sp2"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Hot 2"/>
+                        </LinearLayout>
+                        <!-- 매움 icon_spicy 3-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_spicy3"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/sp3"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Hot 3"/>
+                        </LinearLayout>
+                        <!-- 매움 icon_spicy 4+-->
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/icon_spicy4"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/sp4"/>
+                            <TextView
+                                android:layout_width="55dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginVertical="2dp"
+                                android:textSize="11dp"
+                                android:text="Hot 4+"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/dm_contents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="15dp"
+                    android:textSize="13dp"
+                    android:text="이 음식은 영국으로부터 시작하여 유럽을 거쳐 대서양을 거쳐 중국을 거쳐 일본을 거쳐 미국을 걸쳐 알라알라쌸라쌸라"/>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+        <!-- 가격 dm_price-->
+        <TextView
+            android:id="@+id/dm_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="8dp"
+            android:layout_gravity="right|bottom"
+            android:textSize="18dp"
+            android:textColor="#0073d2"
+            android:text="￦10,000"/>
+        <!-- 추천? dm_bests-->
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/dm_best"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="0dp"
+            android:layout_gravity="right|top"
+            android:src="@drawable/besticon"/>
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/dm_bests"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="0dp"
+            android:layout_gravity="right|top"
+            android:src="@drawable/recoms"/>
+
+        <!-- 할랄 dm_halal-->
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/dm_halal"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="8dp"
+            android:layout_gravity="left|top"
+            android:src="@drawable/halalmark"/>
+        <!-- 무슬림 프랜들리 -->
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/dm_muslim"
+            android:layout_width="120dp"
+            android:layout_height="32dp"
+            android:layout_marginVertical="4dp"
+            android:layout_gravity="left|bottom"
+            android:src="@drawable/muslimf"/>
+
+    </FrameLayout>
+    <!-- 구분선 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#dddddd"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#eeeeee"/>
+    <!--상점3 끝-->
+
+
+    <FrameLayout
+        android:id="@+id/detailFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello"/>
+
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

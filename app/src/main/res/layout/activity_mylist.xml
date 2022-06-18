@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 상단 바-->
+    <FrameLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="15dp">
+
+            <!-- 프로필 버튼 -->
+            <FrameLayout
+                android:layout_width="25dp"
+                android:layout_height="25dp">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/profile" />
+            </FrameLayout>
+
+            <!-- 로고-->
+            <FrameLayout
+                android:layout_width="58dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="58dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/logoss" />
+            </FrameLayout>
+
+            <!--  우측 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:orientation="horizontal"
+                android:layout_gravity="right">
+                <!-- 리스트 버튼 -->
+                <FrameLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="15dp">
+                    <Button
+                        android:id="@+id/listbtn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/map"
+                        android:onClick="onMapBtnClicked"/>
+                </FrameLayout>
+
+                <!-- 검색 버튼-->
+                <FrameLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/search" />
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+    <!-- 구분선 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="50dp"
+        android:background="#AAd7d7d7"/>
+
+    <!-- 상단바 끝 -->
+
+    <!-- 상점 리스트 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@id/topLayout"
+        android:layout_above="@id/bottomLayout">
+
+
+        <!-- 리스트뷰 -->
+        <ListView
+            android:id="@+id/storelistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+    <!-- 상점 리스트 끝-->
+
+    <!-- 하단 바-->
+    <FrameLayout
+        android:id="@+id/bottomLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        >
+        <!-- 구분선 -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#AAd7d7d7"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp">
+
+
+            <!--  프레이룸 -->
+            <FrameLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/light"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="12dp"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:text="Pray room" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!--  즐겨찾기 -->
+            <FrameLayout
+                android:layout_marginLeft="20dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/heart"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="12dp"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:text="my pick" />
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+    <!-- 하단바 끝 -->
+
+</RelativeLayout>

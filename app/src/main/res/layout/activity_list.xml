@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 상단 바-->
+    <FrameLayout
+        android:id="@+id/topSpace"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="#5fa0d6">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp">
+
+            <!-- 프로필 버튼 -->
+            <FrameLayout
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="15dp">
+                <ImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:padding="3dp"
+                    android:src="@drawable/profile_w" />
+            </FrameLayout>
+
+            <!-- 로고-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="center_horizontal|bottom">
+                <ImageView
+                    android:id="@+id/iv_loc"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:scaleType="centerInside"
+                    android:paddingTop="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/loc_w"/>
+                <TextView
+                    android:id="@+id/tv_loc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:text="Seoul"/>
+            </LinearLayout>
+
+            <!--  우측 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:layout_gravity="right">
+                <!-- 리스트 버튼 -->
+                <FrameLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="12dp">
+                    <ImageView
+                        android:id="@+id/listbtn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/map_w"
+                        android:padding="3dp"
+                        android:onClick="onMapBtnClicked"/>
+                </FrameLayout>
+
+                <!-- 검색 버튼-->
+                <FrameLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp">
+                    <ImageView
+                        android:id="@+id/iv_search"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:scaleType="centerInside"
+                        android:padding="3dp"
+                        android:src="@drawable/search_w" />
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+    <!-- 상단바 끝 -->
+
+
+    <!-- 아이콘 선택 바 -->
+    <FrameLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="65dp">
+        <!-- 아이콘 -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp">
+
+
+                <!-- 전체 allicon-->
+                <LinearLayout
+                    android:id="@+id/allicon"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="2dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/thumb"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="2dp"
+                        android:textSize="11dp"
+                        android:text="All"/>
+                </LinearLayout>
+
+
+                <!-- 마이픽 pinicon-->
+                <LinearLayout
+                    android:id="@+id/pinicon"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pin"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="2dp"
+                        android:textSize="11dp"
+                        android:text="Pin"/>
+                </LinearLayout>
+
+                <!-- 할랄 -->
+                <LinearLayout
+                    android:id="@+id/halalicon"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/halalmark"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="2dp"
+                        android:textSize="11dp"
+                        android:text="HALAL"/>
+                </LinearLayout>
+
+                <!-- 할랄 -->
+                <LinearLayout
+                    android:id="@+id/veganicon"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/vegan"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="2dp"
+                        android:textSize="11dp"
+                        android:text="VEGAN"/>
+                </LinearLayout>
+
+
+
+                <!-- 소고기 icon_beef-->
+                <LinearLayout
+                    android:id="@+id/icon_beef"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/beeff"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="2dp"
+                        android:textSize="11dp"
+                        android:text="Beef"/>
+                </LinearLayout>
+                <!-- 치킨 icon_chi-->
+                <LinearLayout
+                    android:id="@+id/icon_chi"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/chicken"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="2dp"
+                        android:textSize="11dp"
+                        android:text="Chicken"/>
+                </LinearLayout>
+                <!-- 더보기 -->
+                <LinearLayout
+                    android:id="@+id/icon_more"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/more"/>
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="2dp"
+                        android:textSize="11dp"
+                        android:text="more"/>
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--  기도실 -->
+                <FrameLayout
+                    android:visibility="gone"
+                    android:id="@+id/prayicon"
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:scaleType="centerInside"
+                            android:layout_gravity="center"
+                            android:background="@drawable/pray" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="11dp"
+                            android:layout_gravity="center"
+                            android:layout_marginVertical="2dp"
+                            android:text="Pray" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!--  카페  -->
+                <FrameLayout
+                    android:visibility="gone"
+                    android:id="@+id/cafeicon"
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:scaleType="centerInside"
+                            android:layout_gravity="center"
+                            android:background="@drawable/coffee"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="11dp"
+                            android:layout_gravity="center"
+                            android:layout_marginVertical="2dp"
+                            android:text="Cafe" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!--  음식 -->
+                <FrameLayout
+                    android:visibility="gone"
+                    android:id="@+id/foodicon"
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:scaleType="centerInside"
+                            android:layout_gravity="center"
+                            android:background="@drawable/food"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="11dp"
+                            android:layout_gravity="center"
+                            android:layout_marginVertical="2dp"
+                            android:text="Food" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!--  옷가게 -->
+                <FrameLayout
+                    android:visibility="gone"
+                    android:id="@+id/dressicon"
+                    android:layout_width="55dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:scaleType="centerInside"
+                            android:layout_gravity="center"
+                            android:background="@drawable/shirt" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="11dp"
+                            android:layout_gravity="center"
+                            android:layout_marginVertical="2dp"
+                            android:text="Dress" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </FrameLayout>
+    <!-- 상단바 끝 -->
+
+    <!-- 상점 리스트 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@id/topLayout"
+        android:layout_above="@id/bottomLayout">
+
+
+            <!-- 리스트뷰 -->
+            <ListView
+                android:id="@+id/storelistview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+    </RelativeLayout>
+    <!-- 상점 리스트 끝-->
+
+    <!-- 하단 바-->
+    <FrameLayout
+        android:id="@+id/bottomLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:visibility="gone">
+    </FrameLayout>
+    <!-- 하단바 끝 -->
+
+
+    <!-- 상단바 밑 그림자 부분 -->
+    <FrameLayout
+        android:id="@+id/topLayoutShade"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_marginTop="125dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/grad4"/>
+    </FrameLayout>
+
+
+</RelativeLayout>
